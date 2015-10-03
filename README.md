@@ -1,5 +1,11 @@
 
 ### Tutorial
+
+### Screenshots
+
+![vim效果图](https://github.com/asin929/vim/blob/master/screenshots/vim.png)
+
+
 ### Installation
 
 1. Backup your old vim configuration files:
