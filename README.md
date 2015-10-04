@@ -33,5 +33,5 @@ Now, open vim and enjoy it!
 1. https://github.com/humiaozuzu/dot-vimrc
 2. https://github.com/ma6174/vim
 3. https://github.com/spf13/spf13-vim
-        
+4. https://github.com/amix/vimrc
 
