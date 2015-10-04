@@ -28,6 +28,10 @@
 
 Now, open vim and enjoy it!
 
+### More Templates of vimrc
 
+1. https://github.com/humiaozuzu/dot-vimrc
+2. https://github.com/ma6174/vim
+3. https://github.com/spf13/spf13-vim
         
 
