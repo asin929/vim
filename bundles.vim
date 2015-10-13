@@ -24,15 +24,17 @@ Bundle 'altercation/vim-colors-solarized'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
+Plugin 'asin929/fcitx-status'
 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Code Check and Completion
+" Code  Highlight　Completion　and　Check
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Plugin 'plasticboy/vim-markdown'
+Bundle 'suan/vim-instant-markdown'
 
 
 

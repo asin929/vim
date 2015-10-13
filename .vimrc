@@ -2,6 +2,7 @@
 source ~/.vim/bundles.vim
 source ~/.vim/bundles_config.vim
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "新文件标题
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -59,7 +60,7 @@ set cursorline                       " 突出显示当前行
 
 " 窗口设置　
 "winpos 5 5          　　　　　　　　　　　　　　　　" 设定窗口位置  
-"set lines=40 columns=155            " 设定窗口大小  
+set lines=24 columns=112            " 设定窗口大小  
 set go=                              " 不要图形按钮  
 set guifont=Courier_New:h10:cANSI    " 设置字体  
 set guioptions-=T                    " 隐藏工具栏
@@ -181,8 +182,8 @@ set termencoding=utf-8
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936
 set fileencoding=utf-8
-set enc=utf-8             "编码设置
-set langmenu=zh_CN.UTF-8  "语言设置
+set enc=utf-8             " 编码设置
+set langmenu=zh_CN.UTF-8  " 语言设置
 " 显示中文帮助
 if version >= 603
     set helplang=cn
@@ -193,17 +194,17 @@ endif
 autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr> " quickfix模式
 set clipboard+=unnamed        " 共享剪贴板  
 set autoread                  " 当文件被改动时自动载入
-set nobackup                  "　从不备份  
+set nobackup                  " 从不备份  
 set autowrite                 " 自动保存
 set confirm                   " 在处理未保存或只读文件的时候，弹出确认
 set history=1000              " 历史记录数
-set nobackup                  "　禁止生成临时文件
+set nobackup                  " 禁止生成临时文件
 set noswapfile
 
 " 搜索设置
 set magic      " 设置魔术
-set ignorecase "搜索忽略大小写
-set hlsearch   "搜索逐字符高亮
+set ignorecase " 搜索忽略大小写
+set hlsearch   " 搜索逐字符高亮
 set incsearch
 
 " 鼠标，光标设置
