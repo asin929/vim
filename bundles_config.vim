@@ -78,7 +78,7 @@ autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "调整窗口宽度
-let NERDTreeWinSize = 24
+let NERDTreeWinSize = 18
 "map a specific key or shortcut to open NERDTree
 map <C-n> :NERDTreeToggle<CR> 
 
@@ -93,7 +93,7 @@ let Tlist_Show_One_File = 1           "　只显示一个文件中的tag，默�
 let Tlist_Sort_Type ='name'           "　Tag的排序规则，以名字排序。默认是以在文件中出现的顺序排序
 let Tlist_GainFocus_On_ToggleOpen = 1 "　Taglist窗口打开时，立刻切换为有焦点状态
 let Tlist_Exit_OnlyWindow = 1         "　如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_WinWidth = 24               "　设置窗体宽度为24，可以根据自己喜好设置
+let Tlist_WinWidth = 12               "　设置窗体宽度为24，可以根据自己喜好设置
 let Tlist_Ctags_Cmd ='/usr/local/Cellar/ctags/5.8/bin/ctags' "设置ctags的位置，不是指向MacOS自带的那个，而是我们用homebrew安装的那个
 map <C-t> :TlistToggle<cr> 　　　　　　　　　　　"　设置触发键"
 

@@ -19,7 +19,15 @@ func SetTitle()
         call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
         call append(line(".")+4, "\#########################################################################") 
         call append(line(".")+5, "\#!/bin/bash") 
-        call append(line(".")+6, "") 
+        call append(line(".")+6, "")
+    elseif &filetype == 'python'
+        call setline(1,"#!/usr/bin/env python")
+        call append(line("."),"# coding=utf-8")
+	call append(line(".")+1, "")
+    elseif &filetype == 'ruby'
+        call setline(1,"#!/usr/bin/env ruby")
+        call append(line("."),"# encoding: utf-8")
+	call append(line(".")+1, "") 
     else 
         call setline(1, "/*************************************************************************") 
         call append(line("."), "    > File Name: ".expand("%")) 
@@ -29,6 +37,7 @@ func SetTitle()
         call append(line(".")+4, " ************************************************************************/") 
         call append(line(".")+5, "")
     endif
+
     if &filetype == 'cpp'
         call append(line(".")+6, "#include<iostream>")
         call append(line(".")+7, "using namespace std;")
@@ -37,6 +46,11 @@ func SetTitle()
     if &filetype == 'c'
         call append(line(".")+6, "#include<stdio.h>")
         call append(line(".")+7, "")
+    endif
+    if expand("%:e") == 'h'
+		call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
+		call append(line(".")+7, "#define _".toupper(expand("%:r"))."_H")
+		call append(line(".")+8, "#endif")
     endif
     "新建文件后，自动定位到文件末尾
     autocmd BufNewFile * normal G
@@ -60,7 +74,7 @@ set cursorline                       " 突出显示当前行
 
 " 窗口设置　
 "winpos 5 5          　　　　　　　　　　　　　　　　" 设定窗口位置  
-set lines=24 columns=112            " 设定窗口大小  
+"set lines=24 columns=112            " 设定窗口大小  
 set go=                              " 不要图形按钮  
 set guifont=Courier_New:h10:cANSI    " 设置字体  
 set guioptions-=T                    " 隐藏工具栏
@@ -146,21 +160,25 @@ nnoremap <F2> :g/^\s*$/d<CR>       " 去空行
 nnoremap <C-F2> :vert diffsplit    " 比较文件  
 map <M-F2> :tabnew<CR>             " 新建标签  
 
-map <F5> :call CompileRunGcc()<CR> "C，C++ 按F5编译运行
+map <F5> :call CompileRunGcc()<CR> " 按F5运行
 func! CompileRunGcc()
-    exec "w"
-    if &filetype == 'c'
-        exec "!g++ % -o %<"
-        exec "! ./%<"
-    elseif &filetype == 'cpp'
-        exec "!g++ % -o %<"
-        exec "! ./%<"
-    elseif &filetype == 'java' 
-        exec "!javac %" 
-        exec "!java %<"
-    elseif &filetype == 'sh'
-        :!./%
-    endif
+	exec "w"
+	if &filetype == 'c'
+		exec "!g++ % -o %<"
+		exec "!time ./%<"
+	elseif &filetype == 'cpp'
+		exec "!g++ % -o %<"
+		exec "!time ./%<"
+	elseif &filetype == 'java' 
+		exec "!javac %" 
+		exec "!time java %<"
+	elseif &filetype == 'sh'
+		:!time bash %
+	elseif &filetype == 'python'
+		exec "!time python2.7 %"
+        elseif &filetype == 'html'
+                exec "!firefox % &"
+	endif
 endfunc
 
 map <F8> :call Rungdb()<CR>        "C,C++的调试
