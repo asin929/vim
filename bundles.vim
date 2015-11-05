@@ -46,6 +46,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'taglist.vim'
 Bundle 'Lokaltog/vim-powerline'
 
+Bundle 'yuratomo/w3m.vim'
 
 filetype plugin indent on     " required!  
 
