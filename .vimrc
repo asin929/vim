@@ -100,8 +100,9 @@ set smartindent     " indent when
 
 set tabstop=4       " tab width
 set softtabstop=4   " backspace
-set noexpandtab     " 不要用空格代替制表符
-set smarttab        " 在行和段开始处使用制表符
+"set noexpandtab     " 不要用空格代替制表符
+"set smarttab       " 在行和段开始处使用制表符
+set expandtab       " expand tab to space"
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
