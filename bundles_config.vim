@@ -25,9 +25,37 @@ colorscheme Tomorrow
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fast editing
+" Fast editing Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"=====插件ctrlp配置
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+map <C-f> :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
 
+"=====插件ctrlp-funky配置
+nnoremap <leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_extensions = ['funky']
+
+"=====插件vim-multiple-cursors配置
+let g:multi_cursor_use_default_mapping=0
+" Default mapping
+let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -71,6 +99,10 @@ let g:syntastic_check_on_wq = 0
 "=====插件LanguageTool配置
 let g:languagetool_jar='/home/asin/SoftWare/languagetool/LanguageTool-3.1/languagetool-commandline.jar'
 
+"=====插件nerdcommenter配置
+" 注释的时候自动加个空格, 强迫症必配
+let g:NERDSpaceDelims=1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " IDE features config
@@ -99,15 +131,24 @@ map <C-n> :NERDTreeToggle<CR>
 "=====插件powerline配置
 let g:Powline_symbols='fancy'
 
-"=====插件taglist配置
-let Tlist_Auto_Open = 1               " 启动vim后自动打开taglist窗口
-let Tlist_Use_Right_Window = 1        " 让taglist窗口出现在Vim的右边
-let Tlist_File_Fold_Auto_Close = 1    "　当同时显示多个文件中的tag时，设置为1，可使taglist只显示当前文件tag，其它文件的tag都被折叠起来。
-let Tlist_Show_One_File = 1           "　只显示一个文件中的tag，默认为显示多个
-let Tlist_Sort_Type ='name'           "　Tag的排序规则，以名字排序。默认是以在文件中出现的顺序排序
-let Tlist_GainFocus_On_ToggleOpen = 1 "　Taglist窗口打开时，立刻切换为有焦点状态
-let Tlist_Exit_OnlyWindow = 1         "　如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_WinWidth = 12               "　设置窗体宽度为24，可以根据自己喜好设置
-let Tlist_Ctags_Cmd ='/usr/local/Cellar/ctags/5.8/bin/ctags' "设置ctags的位置，不是指向MacOS自带的那个，而是我们用homebrew安装的那个
-map <C-t> :TlistToggle<cr> 　　　　　　　　　　　"　设置触发键"
+"=====插件tagbar配置
+nmap <C-t> :TagbarToggle<CR>
+" 启动时自动focus
+let g:tagbar_autofocus = 1
+
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+\ }
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Else
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"=====插件gundo配置
+nnoremap <leader>h :GundoToggle<CR>
 

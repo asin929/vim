@@ -20,13 +20,14 @@ Bundle 'altercation/vim-colors-solarized'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fast editing
+" Fast editing　Search 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'asin929/fcitx-status'
-
-
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'terryma/vim-multiple-cursors'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code  Highlight　Completion　and　Check
@@ -36,6 +37,7 @@ Bundle 'scrooloose/syntastic'
 Plugin 'plasticboy/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'vim-scripts/LanguageTool'
+Bundle 'scrooloose/nerdcommenter'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -43,9 +45,17 @@ Bundle 'vim-scripts/LanguageTool'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdtree'
-Bundle 'taglist.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'jszakmeister/markdown2ctags'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'yuratomo/w3m.vim'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Else
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'sjl/gundo.vim'
+
 
 filetype plugin indent on     " required!  
 
