@@ -35,7 +35,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Plugin 'plasticboy/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
-
+Bundle 'vim-scripts/LanguageTool'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

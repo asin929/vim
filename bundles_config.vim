@@ -68,6 +68,8 @@ let g:syntastic_check_on_wq = 0
 "let g:syntastic_cpp_compiler = 'clang++' "　对c++11检查的支持"
 "let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
 
+"=====插件LanguageTool配置
+let g:languagetool_jar='/home/asin/SoftWare/languagetool/LanguageTool-3.1/languagetool-commandline.jar'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
