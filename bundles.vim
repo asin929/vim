@@ -16,6 +16,8 @@ Bundle 'gmarik/vundle'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
+Bundle 'jnurmine/Zenburn'
 
 
 

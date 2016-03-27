@@ -13,14 +13,16 @@ let mapleader = ","                              " 将leader就映射为逗号�
 "colorscheme Tomorrow-Night-Blue
 "colorscheme Tomorrow-Bright
 " colorscheme Tomorrow-Night
-colorscheme Tomorrow
+"colorscheme Tomorrow
 
 "=====vim-tomorrow-theme配置
-"colorscheme solarized
-"syntax enable
-"set t_Co=256
-"set background=dark
-"colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+syntax enable
+set background=dark
+set t_Co=256
+colorscheme solarized
 
 
 
