@@ -108,6 +108,16 @@ let g:languagetool_jar='/home/asin/SoftWare/languagetool/LanguageTool-3.1/langua
 " 注释的时候自动加个空格, 强迫症必配
 let g:NERDSpaceDelims=1
 
+"=====插件vim-commentary配置
+map <leader>c :Commentary<cr> " ,c进行注释
+
+"=====插件vim-autoformat配置
+noremap <F3> :Autoformat<CR>
+let g:autoformat_verbosemode=1
+" let g:formatter_yapf_style = 'pep8'
+" let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
+let g:formatters_python = ['autopep8']
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " IDE features config
