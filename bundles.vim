@@ -39,7 +39,9 @@ Bundle 'scrooloose/syntastic'
 Plugin 'plasticboy/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'vim-scripts/LanguageTool'
-Bundle 'scrooloose/nerdcommenter'
+" Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-commentary'
+Plugin 'KabbAmine/zeavim.vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,7 +54,7 @@ Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'jszakmeister/markdown2ctags'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'yuratomo/w3m.vim'
+"Bundle 'yuratomo/w3m.vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

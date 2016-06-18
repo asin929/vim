@@ -151,6 +151,8 @@ nmap <leader>w :w!<cr>
 nmap <leader>q :wqa<cr>
 nmap <leader>x :qa!<cr>
 nmap <leader>f :find<cr>
+map <leader>c :Commentary<cr>
+
 
 map <C-A> ggVG                     " 映射全选 ctrl+a
 map! <C-A> <Esc>ggVGY
