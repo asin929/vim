@@ -62,6 +62,37 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
+"=====插件emmet配置"
+"let g:user_emmet_expandabbr_key = '<leader>e'  " 将`<C-y>,`替换为`<leader>e`
+let g:user_emmet_leader_key='<leader>e'         " 当前将`<C-y>,`替换为`<leader>y,`
+
+"=====插件easymotion配置
+map f <Plug>(easymotion-prefix)
+map ff <Plug>(easymotion-s)
+map fs <Plug>(easymotion-f)
+map fl <Plug>(easymotion-lineforward)
+map fj <Plug>(easymotion-j)
+map fk <Plug>(easymotion-k)
+map fh <Plug>(easymotion-linebackward)
+" 忽略大小写
+let g:EasyMotion_smartcase = 1
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+"======插件ctrlsf.vimd配置"
+nmap <C-G> <Plug>CtrlSFPrompt
+
+
+"=====插件YankRing.vim配置
+nnoremap <leader>p :YRShow<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Completions　config
@@ -70,6 +101,9 @@ let g:multi_cursor_quit_key='<Esc>'
 "配置默认的ycm_extra_conf.py文件路径
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py' 
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>   " 按,jd 会跳转到定义
+let g:ycm_complete_in_comments = 1               "  在注释输入中也能补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 "注释和字符串中的文字也会被收入补全
+let g:ycm_seed_identifiers_with_syntax=1         " 开启语法关键字补全
 let g:ycm_confirm_extra_conf=0                   "　打开vim时不再询问是否加载ycm_extra_conf.py配置
 let g:ycm_collect_identifiers_from_tag_files = 1 "　使用ctags生成的tags文件
 let g:ycm_error_symbol = '>>'                    "　错误的显示符号
@@ -87,6 +121,23 @@ let g:ycm_filetype_blacklist = {
       \ 'infolog' : 1,
       \ 'mail' : 1
       \}
+let g:ycm_semantic_triggers =  {
+            \   'c' : ['->', '.'],
+            \   'objc' : ['->', '.'],
+            \   'ocaml' : ['.', '#'],
+            \   'cpp,objcpp' : ['->', '.', '::'],
+            \   'perl' : ['->'],
+            \   'php' : ['->', '::', '(', 'use ', 'namespace ', '\'],
+            \   'cs,java,typescript,d,python,perl6,scala,vb,elixir,go' : ['.', 're!(?=[a-zA-Z]{3,4})'],
+            \   'html': ['<', '"', '</', ' '],
+            \   'vim' : ['re![_a-za-z]+[_\w]*\.'],
+            \   'ruby' : ['.', '::'],
+            \   'lua' : ['.', ':'],
+            \   'erlang' : [':'],
+            \   'haskell' : ['.', 're!.'],
+            \   'scss,css': [ 're!^\s{2,4}', 're!:\s+' ],
+            \   'javascript': ['.', 're!(?=[a-zA-Z]{3,4})'],
+            \ }
 
 "=====插件syntastic配置
 set statusline+=%#warningmsg#
@@ -114,9 +165,48 @@ map <leader>c :Commentary<cr> " ,c进行注释
 "=====插件vim-autoformat配置
 noremap <F3> :Autoformat<CR>
 let g:autoformat_verbosemode=1
-" let g:formatter_yapf_style = 'pep8'
-" let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
 let g:formatters_python = ['autopep8']
+let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
+" let g:formatter_yapf_style = 'pep8'
+
+"===========配置tern-for-vim配置"
+" 鼠标停留在方法内时显示参数提示
+let g:tern_show_argument_hints = 'on_hold'
+" 补全时显示函数类型定义
+let g:tern_show_signature_in_pum = 1
+" 跳转到浏览器
+nnoremap <leader>tb :TernDocBrowse<cr>
+" 显示变量定义
+nnoremap <leader>tt :TernType<cr>
+" 跳转到定义处
+nnoremap <leader>tf :TernDef<cr>
+" 显示文档
+nnoremap <leader>td :TernDoc<cr>
+" 预览窗口显示定义处代码
+nnoremap <leader>tp :TernDefPreview<cr>
+" 变量重命名
+nnoremap <leader>tr :TernRename<cr>
+" location 列表显示全部引用行
+nnoremap <leader>ts :TernRefs<cr>
+
+"=============插件MatchTagAlway的配置"
+nnoremap mm :MtaJumpToOtherTag<cr>  "跳转到匹配的标签"
+
+
+"=============插件wildfire配置"
+" use '*' to mean 'all other filetypes'
+" in this example, html and xml share the same text objects
+let g:wildfire_objects = {
+    \ "*" : ["i'", 'i"', "i)", "i]", "i}"],
+    \ "html,xml" : ["at", "it"],
+\ }
+
+
+"==============插件UltiSnips配置"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
