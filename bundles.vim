@@ -62,6 +62,8 @@ Plugin 'Raimondi/delimitMate'
 " Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+" Plugin 'vim-scripts/Mark--Karkat'
+Bundle 'derekwyatt/vim-scala'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
